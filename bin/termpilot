@@ -2,4 +2,6 @@
 
 require_relative "../lib/termpilot"
 
-Termpilot.run
+query = ARGV[0]
+
+Termpilot.run query

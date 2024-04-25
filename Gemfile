@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
+gem 'ruby-openai'
 
 group :development do
   gem 'pry'

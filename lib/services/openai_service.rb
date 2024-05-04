@@ -5,7 +5,8 @@ require 'openai'
 # Service to interact with OpenAI API
 class OpenaiService
   def self.chat(query)
-    client = OpenAI::Client.new(access_token: '')
+    access_token = ENV.fetch('OPENAI_ACCESS_TOKEN')
+    client = OpenAI::Client.new(access_token:)
 
     response = client.chat(
       parameters: {

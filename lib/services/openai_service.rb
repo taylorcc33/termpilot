@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'openai'
+
 # Service to interact with OpenAI API
 class OpenaiService
   def self.chat(query)
@@ -16,11 +18,18 @@ class OpenaiService
       }
     )
 
-    puts response.dig('choices', 0, 'message', 'content')
+    response_text = response.dig('choices', 0, 'message', 'content')
+
+    copy_to_clipboard(response_text)
+    puts response_text
   end
 
   def self.prepare_query(query)
     "I want you to respond only wth the code snippet or terminal command I ask
-    for, nothing else. I would like to know the command to #{query}"
+    for, nothing else. No other text, only the code or command. I would like to know the command to #{query}"
+  end
+
+  def self.copy_to_clipboard(data)
+    IO.popen('pbcopy', 'w') { |pbcopy| pbcopy << data }
   end
 end

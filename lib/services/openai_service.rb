@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'openai'
-
 # Service to interact with OpenAI API
 class OpenaiService
   def self.chat(query)
@@ -22,6 +20,7 @@ class OpenaiService
   end
 
   def self.prepare_query(query)
-    "I want you to respond only wth the code snippet or terminal command I ask for, nothing else. I would like to know the command to #{query}"
+    "I want you to respond only wth the code snippet or terminal command I ask
+    for, nothing else. I would like to know the command to #{query}"
   end
 end

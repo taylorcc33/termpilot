@@ -3,6 +3,6 @@
 
 require_relative '../lib/termpilot'
 
-query = ARGV[0]
+query = ARGV.join(' ')
 
 Termpilot.run query

@@ -10,4 +10,11 @@ Gem::Specification.new do |s|
   s.description   = 'A wrapper around ChatGPT to allow for prompts in the terminal.'
   s.homepage      = 'https://github.com/taylorcc33/termpilot'
   s.license       = 'MIT'
+
+  s.files         = Dir['lib/**/*', 'bin/**/*', 'README.md']
+  s.executables   = ['termpilot']
+  s.bindir        = 'bin'
+  s.require_paths = ['lib']
+
+  s.add_runtime_dependency 'ruby-openai', '~> 3.0'
 end

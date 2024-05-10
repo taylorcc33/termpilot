@@ -1,4 +1,4 @@
-# frozen_string literal: true
+# frozen_string_literal: true
 
 Gem::Specification.new do |s|
   s.name          = 'termpilot'
@@ -17,4 +17,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_runtime_dependency 'ruby-openai', '~> 6.5.0'
+
+  s.required_ruby_version = '>= 3.1.0'
 end

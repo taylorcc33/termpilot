@@ -1,6 +1,6 @@
-# frozen_literal_string: true
+# frozen_string_literal: true
 
-require 'spec_helper'
+require '/spec/spec_helper'
 require 'services/openai_service'
 
 RSpec.describe Services::OpenaiService do

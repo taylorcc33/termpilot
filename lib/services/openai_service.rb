@@ -26,8 +26,12 @@ module Services
     end
 
     def self.prepare_query(query)
-      "I want you to respond only wth the code snippet or terminal command I ask
-      for, nothing else. No other text, only the code or command. I would like to know the command to #{query}"
+      if query[:context]
+        query[:prompt]
+      else
+        "I want you to respond only wth the code snippet or terminal command I ask
+        for, nothing else. No other text, only the code or command. I would like to know the command to #{query[:prompt]}"
+      end
     end
 
     # Only works on macOS

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = 'termpilot'
-  s.version       = '0.1.0'
+  s.version       = '0.1.1'
   s.authors       = ['Taylor Collins']
   s.email         = ['taylorcc33@gmail.com']
 

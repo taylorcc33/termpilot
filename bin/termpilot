@@ -1,8 +1,23 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'optparse'
 require_relative '../lib/termpilot'
 
-query = ARGV.join(' ')
+options = { empty_prompt: false }
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: termpilot [options]'
+
+  opts.on('-e', '--emtpy-context', 'Empty context: removes termplilot\'s
+      default context so that you can ask a more general question.') do |_text|
+    options[:empty_prompt] = true
+  end
+end.parse!
+
+query = {
+  prompt: ARGV.join(' '),
+  context: options[:empty_prompt]
+}
 
 Termpilot.run query

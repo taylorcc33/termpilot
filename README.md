@@ -16,6 +16,9 @@ Simply type `termpilot` followed by a space and your terminal command question. 
 concise and simple you are, the better. Termpilot should return a response from ChatGPT with
 just the terminal command. This command is then automatically copied to your clipboard.
 
+You can pass a `-e` flag (for 'empty context') to remove termpilot's default context and
+get a standard, more verbose chatGPT response.
+
 ### License
 
 whatever.
